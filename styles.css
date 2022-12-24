@@ -15,14 +15,14 @@
   }
   
   
-  .todo-form{
+  .todo-modal{
     display:flex;
     background-color: white;
-    min-height: 40rem;
-    min-width: 30rem;
+    height: 80vh;
+    width: 33%;
     border-radius: 20px;
     flex-direction: column;
-    max-height: 90vh;
+    overflow: hidden;
   }
   
   .header{
@@ -70,6 +70,7 @@
   .output{
     display:flex;
     padding: 1rem 2rem;
+    overflow: hidden;
   }
   
   .todo-list{
@@ -78,6 +79,8 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    overflow-y: scroll;
+    overflow: hidden;
   }
   
   .todo-comp{
@@ -91,6 +94,14 @@
     border-radius: 10px;
     font-size: 1.2rem;
     gap: 15px;
+  }
+
+  .edit-todo-input-field{
+    display:flex;
+    height: 2.2rem;
+    border-radius: 8px;
+    padding: 0 0.5rem;
+    font-size: 1rem;
   }
   
   .buttons{

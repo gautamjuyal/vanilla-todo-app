@@ -34,6 +34,9 @@ function createTodoComp(element) {
   btnEdit.textContent = "Edit";
   btnEdit.classList.add("edit");
   div.appendChild(btnEdit);
+
+  btnEdit.addEventListener("click", editTodoHandler);
+
   const btnDelete = document.createElement("button");
   btnDelete.textContent = "Delete";
   btnDelete.classList.add("delete");
@@ -42,6 +45,28 @@ function createTodoComp(element) {
   btnDelete.addEventListener("click", deleteTodoHandler);
 
   todoList.appendChild(li);
+}
+
+function editTodoHandler(event) {
+  const titleElement = event.target.closest("li").querySelector("p");
+  const mainCompId = event.target.closest("li").id;
+  const oldText = titleElement.textContent;
+  const newTitleInput = document.createElement("input");
+  newTitleInput.setAttribute("type", "text");
+  newTitleInput.classList.add("edit-todo-input-field");
+  titleElement.parentNode.replaceChild(newTitleInput, titleElement);
+  newTitleInput.value = oldText;
+  newTitleInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      const newText = document.createElement("p");
+      newText.textContent = newTitleInput.value;
+      newTitleInput.parentElement.replaceChild(newText, newTitleInput);
+      for (const item of TODO_LIST) {
+        if (item.id === +mainCompId) item.title = newTitleInput.value;
+      }
+    }
+    console.log(TODO_LIST);
+  });
 }
 
 function deleteTodoHandler(event) {
