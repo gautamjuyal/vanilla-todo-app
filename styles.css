@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body{
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+  }
+  
+  
+  .todo-form{
+    display:flex;
+    background-color: white;
+    min-height: 40rem;
+    min-width: 30rem;
+    border-radius: 20px;
+    flex-direction: column;
+    max-height: 90vh;
+  }
+  
+  .header{
+    display:flex;
+    justify-content: center;
+    padding: 1rem;
+    background: teal;
+    border-radius: 20px 20px 0 0;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .user-input{
+    display:flex;
+    gap: 1rem;
+    outline: 0px;
+    justify-content: center;
+    padding: 2.5rem 0;
+  }
+  
+  .input-field{
+    height: 3rem;
+    width: 60%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    padding: 0 1rem;
+  }
+  
+  #add-todo-btn{
+    width: 4rem;
+    border-radius: 10px;
+    background-color: lightgreen;
+    border: 0px;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+  }
+  
+  #add-todo-btn:hover{
+    background: green;
+    color: white;
+  }
+  
+  .output{
+    display:flex;
+    padding: 1rem 2rem;
+  }
+  
+  .todo-list{
+    display:flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .todo-comp{
+    list-style-type: none;
+    display:flex;
+    background: lavender;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    gap: 15px;
+  }
+  
+  .buttons{
+    display:flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .edit, .delete{
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: 0px;
+    font-size: 1.1rem;
+  }
+  
+  .edit:hover, .delete:hover{
+    outline: 2px solid black;
+  }
+  
+  .edit{
+    background-color: yellow;
+  }
+  
+  .delete{
+    background-color: red;
+    color: white;
+  }
