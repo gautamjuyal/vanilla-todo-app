@@ -4,6 +4,11 @@
     box-sizing: border-box;
     font-family: sans-serif;
   }
+
+  input[type=text]:active, input[type=text]:focus{
+    border: 2px solid orange;
+    outline: 0px;
+  }
   
   body{
     height: 100vh;
@@ -18,8 +23,8 @@
   .todo-modal{
     display:flex;
     background-color: white;
-    height: 80vh;
     width: 33%;
+    height: 80vh;
     border-radius: 20px;
     flex-direction: column;
     overflow: hidden;
@@ -80,7 +85,11 @@
     gap: 10px;
     align-items: center;
     overflow-y: scroll;
-    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .todo-list::-webkit-scrollbar{
+    width: 0px;
   }
   
   .todo-comp{
