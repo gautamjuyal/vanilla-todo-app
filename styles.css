@@ -1,12 +1,20 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
+  }
+
+  input[type=text]{
+    border: 2px solid #8888;
+    transition: all 290ms ease;
   }
 
   input[type=text]:active, input[type=text]:focus{
-    border: 2px solid orange;
+    box-shadow: 1px 1px 3px grey, 1px 1px 3px grey;
+    border-color: transparent;
     outline: 0px;
   }
   
@@ -23,7 +31,7 @@
   .todo-modal{
     display:flex;
     background-color: white;
-    width: 33%;
+    width: 500px;
     height: 80vh;
     border-radius: 20px;
     flex-direction: column;
@@ -43,28 +51,30 @@
   
   .user-input{
     display:flex;
-    gap: 1rem;
+    gap: 0.5rem;
     outline: 0px;
     justify-content: center;
-    padding: 2.5rem 0;
+    padding: 2rem 2rem;
   }
   
   .input-field{
     height: 3rem;
-    width: 60%;
-    border-radius: 10px;
+    width: 100%;
+    border-radius: 8px;
     font-size: 1.2rem;
     box-sizing: border-box;
     padding: 0 1rem;
   }
   
   #add-todo-btn{
-    width: 4rem;
-    border-radius: 10px;
+    height: 3rem;
+    padding: 0 1.5rem;
+    border-radius: 8px;
     background-color: lightgreen;
     border: 0px;
     box-sizing: border-box;
     font-size: 1.1rem;
+    transition: background 250ms ease;
   }
   
   #add-todo-btn:hover{
@@ -98,43 +108,72 @@
     background: lavender;
     width: 100%;
     justify-content: space-between;
-    padding: 1.5rem 2rem;
+    padding: 1rem;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 1.2rem;
     gap: 15px;
+    animation: add-to-dom 0.5s ease-out;
+    /* animation: remove-from-dom 0.5s ease-in; */
   }
 
   .edit-todo-input-field{
+    width: 100%;
     display:flex;
     height: 2.2rem;
-    border-radius: 8px;
+    border-radius: 6px;
     padding: 0 0.5rem;
     font-size: 1rem;
   }
   
   .buttons{
     display:flex;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: center;
   }
   
   .edit, .delete{
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 5px 10px;
     border: 0px;
     font-size: 1.1rem;
+    background-color: white;
+    outline-color: transparent;
+    transition: transform 280ms ease;
   }
   
   .edit:hover, .delete:hover{
-    outline: 2px solid black;
+    transform: translateY(-3px);
+    box-shadow: 2px 2px 4px #8888;
   }
   
   .edit{
-    background-color: yellow;
+    /* background-color: yellow; */
   }
   
   .delete{
-    background-color: red;
-    color: white;
+    /* background-color: red;
+    color: white; */
   }
+
+  @media (max-width: 500px){
+    
+    .todo-modal{
+      width: 90%;
+    }
+    .todo-comp{
+      padding: 0.7rem;
+      font-size: 16px;
+    }
+  }
+
+  @keyframes add-to-dom{
+    0%{
+      transform: translateX(100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
+
+  
