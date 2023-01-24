@@ -117,6 +117,20 @@
     /* animation: remove-from-dom 0.5s ease-in; */
   }
 
+  .todo-comp p{
+    width: 66%;
+  }
+
+  .todo-comp.is-done p{
+    text-decoration: line-through;
+    color: rgba(49, 49, 49, 0.533)
+  }
+
+  .todo-comp.is-done button{
+    background: lavender;
+    color: rgba(49, 49, 49, 0.533)
+  }
+
   .edit-todo-input-field{
     width: 100%;
     display:flex;
@@ -127,6 +141,7 @@
   }
   
   .buttons{
+    width: 34%;
     display:flex;
     gap: 0.5rem;
     align-items: center;

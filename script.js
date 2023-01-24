@@ -12,12 +12,25 @@ noTodoMessage.textContent = "No items found";
 function addTodoHandler(event) {
   event.preventDefault();
   if (inputField.value.trim() === "") return;
-  let newTodo = { id: +Math.random(), title: inputField.value };
-  TODO_LIST.push(newTodo);
+  let newTodo = { id: +Math.random(), title: inputField.value, isDone: false };
+  TODO_LIST.unshift(newTodo);
   createTodoComp(newTodo);
   inputField.value = "";
   if (todoList.contains(noTodoMessage) && TODO_LIST.length > 0)
     todoList.removeChild(noTodoMessage);
+
+  console.log(TODO_LIST);
+}
+
+function compClickHandler(e) {
+  e.stopImmediatePropagation();
+  if (this.classList.contains("is-done")) {
+    this.classList.remove("is-done");
+    TODO_LIST.find((el) => (this.id = el.id)).isDone = false;
+  } else {
+    this.classList.add("is-done");
+    TODO_LIST.find((el) => (this.id = el.id)).isDone = true;
+  }
 }
 
 function createTodoComp(element) {
@@ -44,7 +57,9 @@ function createTodoComp(element) {
 
   btnDelete.addEventListener("click", deleteTodoHandler);
 
-  todoList.appendChild(li);
+  li.addEventListener("click", compClickHandler);
+
+  todoList.prepend(li);
 }
 
 function editTodoHandler(event) {
