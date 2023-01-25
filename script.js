@@ -23,7 +23,7 @@ function addTodoHandler(event) {
 }
 
 function compClickHandler(e) {
-  e.stopImmediatePropagation();
+  e.stopPropagation();
   if (this.classList.contains("is-done")) {
     this.classList.remove("is-done");
     TODO_LIST.find((el) => (this.id = el.id)).isDone = false;
@@ -44,14 +44,14 @@ function createTodoComp(element) {
   div.classList.add("buttons");
   li.appendChild(div);
   const btnEdit = document.createElement("button");
-  btnEdit.textContent = "Edit";
+  btnEdit.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
   btnEdit.classList.add("edit");
   div.appendChild(btnEdit);
 
   btnEdit.addEventListener("click", editTodoHandler);
 
   const btnDelete = document.createElement("button");
-  btnDelete.textContent = "Delete";
+  btnDelete.innerHTML = '<i class="fa-solid fa-trash"></i>';
   btnDelete.classList.add("delete");
   div.appendChild(btnDelete);
 
@@ -63,10 +63,16 @@ function createTodoComp(element) {
 }
 
 function editTodoHandler(event) {
+  event.stopImmediatePropagation();
   const titleElement = event.target.closest("li").querySelector("p");
   const mainCompId = event.target.closest("li").id;
   const oldText = titleElement.textContent;
   const newTitleInput = document.createElement("input");
+
+  newTitleInput.addEventListener("click", (event) =>
+    event.stopImmediatePropagation()
+  );
+
   newTitleInput.setAttribute("type", "text");
   newTitleInput.classList.add("edit-todo-input-field");
   titleElement.parentNode.replaceChild(newTitleInput, titleElement);
@@ -85,6 +91,7 @@ function editTodoHandler(event) {
 }
 
 function deleteTodoHandler(event) {
+  event.stopImmediatePropagation();
   const parentListEl = event.target.closest("li");
   todoList.removeChild(parentListEl);
 

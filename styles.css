@@ -54,26 +54,27 @@
     gap: 0.5rem;
     outline: 0px;
     justify-content: center;
-    padding: 2rem 2rem;
+    padding: 1.5rem 2rem;
   }
   
   .input-field{
-    height: 3rem;
+    height: 2.5rem;
     width: 100%;
     border-radius: 8px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     box-sizing: border-box;
     padding: 0 1rem;
   }
   
   #add-todo-btn{
-    height: 3rem;
+    height: 2.5rem;
     padding: 0 1.5rem;
     border-radius: 8px;
     background-color: lightgreen;
     border: 0px;
     box-sizing: border-box;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 500;
     transition: background 250ms ease;
   }
   
@@ -111,14 +112,14 @@
     padding: 1rem;
     align-items: center;
     border-radius: 8px;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     gap: 15px;
     animation: add-to-dom 0.5s ease-out;
     /* animation: remove-from-dom 0.5s ease-in; */
   }
 
   .todo-comp p{
-    width: 66%;
+    width: 79%;
   }
 
   .todo-comp.is-done p{
@@ -141,7 +142,7 @@
   }
   
   .buttons{
-    width: 34%;
+    width: 21%;
     display:flex;
     gap: 0.5rem;
     align-items: center;
@@ -162,14 +163,14 @@
     box-shadow: 2px 2px 4px #8888;
   }
   
-  .edit{
-    /* background-color: yellow; */
+  /* .edit{
+    background-color: yellow;
   }
   
   .delete{
-    /* background-color: red;
-    color: white; */
-  }
+    background-color: red;
+    color: white;
+  } */
 
   @media (max-width: 500px){
     
